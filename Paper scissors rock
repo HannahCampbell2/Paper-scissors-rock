@@ -1,0 +1,39 @@
+
+#define variables
+user_choice = ""
+computer_choice = ""
+
+#define lists
+NAME = ["rock", "paper", "scissors"]
+
+
+#ask user to enter rock paper or scissors 
+while user_choice == "":
+    user_choice = input("Enter either rock, paper or scissors: ").strip().lower()
+    if user_choice not in NAME:
+        print("please enter rock paper or scissors ")
+        user_choice = ""
+
+#generate the computers choice
+computer_choice = random.choice(NAME)
+
+#check if the user has won or not
+if user_choice == computer_choice:
+    print(" I selected {} We tied.".format (computer_choice))
+elif user_choice == "rock":
+    if computer_choice == "scissors":
+        print(" I selected {} You win.".format (computer_choice))
+    else:
+        print ("I selected {} You lose suckaaa.".format (computer_choice))
+elif user_choice == "paper":
+    if computer_choice == "rock":
+        print ("I selected {} You win.".format (computer_choice))
+    else:
+        print ("I selected {} You lose suckaaa.".format (computer_choice))
+elif user_choice == "scissors":
+    if computer_choice == "paper":
+        print ("I selected {} You win.".format (computer_choice))
+    else:
+        print ("I selected {} You lose suckaaa.".format (computer_choice))
+
+#tell the user they didn't enter paper, scissors or rock
